@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/character'
-require './lib/show'
-require './lib/network'
+require './lib/character.rb'
+require './lib/show.rb'
+require './lib/network.rb'
 
 class NetworkTest < Minitest::Test
 
@@ -26,5 +26,11 @@ class NetworkTest < Minitest::Test
   assert_equal "NBC", @nbc.name
   assert_equal [], @nbc.shows
   end
-  
+
+  def test_that_it_adds_a_show_to_shows
+
+  @nbc.add_show(@knight_rider)
+  end
+
+
 end
